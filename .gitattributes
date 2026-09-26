@@ -1,0 +1,21 @@
+# Trata todos os arquivos de texto automaticamente com conversão para LF no Git
+* text=auto
+
+# Garante que arquivos de código e configurações sempre usem LF
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+.gitignore text eol=lf
+
+# Protege arquivos binários/mídia para não serem corrompidos
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary

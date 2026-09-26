@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  --color-cream: #faf7f2;
+  --color-ink: #1c1917;
+
+  /* Verde "garrafa" — cor principal do Copo Certo */
+  --color-brand-50: #eef6f2;
+  --color-brand-100: #d5eadf;
+  --color-brand-200: #acd4c0;
+  --color-brand-300: #7cb89b;
+  --color-brand-400: #4f9a78;
+  --color-brand-500: #347d5e;
+  --color-brand-600: #28654c;
+  --color-brand-700: #20513e;
+  --color-brand-800: #1b4334;
+  --color-brand-900: #14332a;
+  --color-brand-950: #0b1f19;
+
+  --animate-fade-in: fade-in 160ms ease-out;
+  --animate-pop-in: pop-in 180ms cubic-bezier(0.2, 0.9, 0.3, 1.2);
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pop-in {
+    from { opacity: 0; transform: translateY(6px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-cream font-sans text-ink;
+  }
+  ::selection {
+    background: var(--color-brand-200);
+  }
+  input[type="search"]::-webkit-search-cancel-button {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
